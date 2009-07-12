@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html style='width:100%; height: 100%'>
+<head>
+<link type="text/css" rel="stylesheet" href="/static/stylesheets/freebase/jquery_suggest.css" />
+<link type="text/css" rel="stylesheet" href="/static/stylesheets/main.css"/>
+
+{% include "css/ui/freebase/freebase-controls.css" %}
+
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta>
+
+<script type="text/javascript" src="/static/scripts/jquery-1.3.2.js">
+	</script> 
+	<script type="text/javascript">
+	{% include "scripts/freebase-suggest/jquery.suggest.js" %} 
+$(function(){
+
+// add topic
+$('input#search').suggest()
+.bind("fb-select", function(e, data) {
+	console.log("select id: " , data.id , ", name: " , data.name);
+
+	// make ajax call
+	$.ajax({
+	type: "POST", 
+	//url: '/rpc',
+	datatype: "json",
+	data:
+	{
+	   user_name: "{{ user.name }}",
+	   topic_name: data.name,
+	   topic_id: data.id
+	},
+	error: function() { console.log('error'); return false; },
+	success: function(response) {
+	console.log(response);
+	},
+	complete: function(XMLHttpRequest, textStatus){}
+	});
+
+
+
+});
+
+user_options = {
+	{% if debug %}
+	service_url: "http://sandbox.freebase.com",
+	{% else %}
+	service_url: "http://www.freebase.com",
+	{% endif %}
+	soft: "false",
+mql_filter: 
+[{
+	{# WHY IS THIS SOOO SLOW #}
+  "!pd:/base/yupgrade/user/topics": [{
+    "id": "{{ user.id }}",
+    "type": "/base/yupgrade/user"
+  }]
+}]
+
+}
+
+// search user domain
+// locally, use sandbox (this can be cached)
+$('input#user_search').suggest(user_options);
+	})
+</script> 
+
+{% block head %}{% endblock head %}
+<title>{{ user.name }}</title>
+
+</head>
+
+<body style='width:100%; height: 100%'>
+<div style='width:100%; height: 100%'>
+
+<br/>
+add topic for {{ user.name }}: <input id="search">
+<br/><br/>
+{{user.name}} topic search: <input id="user_search">
+<div>
+</body>
+</html>

@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 36
+/svn/!svn/ver/155/trunk/freebase/fcl
+END
+mktype.py
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/88/trunk/freebase/fcl/mktype.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/88/trunk/freebase/fcl/__init__.py
+END
+commands.py
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/155/trunk/freebase/fcl/commands.py
+END
+README.txt
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/88/trunk/freebase/fcl/README.txt
+END
+fcl.py
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/88/trunk/freebase/fcl/fcl.py
+END
+fbutil.py
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/88/trunk/freebase/fcl/fbutil.py
+END
+inspect.py
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/88/trunk/freebase/fcl/inspect.py
+END
