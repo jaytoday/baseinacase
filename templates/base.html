@@ -3,12 +3,19 @@
 
 <html>
 <head>
+	
 <link type="text/css" rel="stylesheet" href="/static/stylesheets/main.css" />
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta>
-
-{% block head %}{% endblock head %}
-<title>GeeBase</title>
+<script type="text/javascript" src="/static/scripts/jquery-1.3.2.js">
+	</script> 
+{% block head %}
+{% endblock head %}
+<title>
+	{% block title %}
+	Base-in-a-Case 
+{% endblock title %}
+</title>
 
 </head>
 
@@ -20,23 +27,7 @@
 
 <div id="contain">     
 <div id="content">
-<div class="title"> <h1>
-<a href="/">{% block title %} 
-
-
-{% endblock title %} </a>
-
-
-</h1></div> 
 <div id="meta"> 
-
-
-
-{% block link %}
-
-{% endblock link %}
-
-
 
 <div id="panels" class="autopagerize_page_element">
 
@@ -71,13 +62,13 @@
 <div id="aboutfooter">
 
 <div class="description">
-<img class="sunlightlogo" width="100" src="http://wiki.sunlightlabs.com/skins/common/images/sunlightWikiLogo.png"/> 
-<div id="sunlight"><br/> 
-Help Spread The <a href="http://sunlightfoundation.com/">Sunlight </a><br/>  <a href="http://sunlightfoundation.com/resources">Resources </a> -- <a href="http://sunlightfoundation.com/grants">Grants </a> -- <a href="http://www.sunlightlabs.org/">Labs </a>
+	
+<img src="http://res.freebase.com/s/e9f7d4360a9ecaf177e3ee42bffece9c0c6bd03a73ea5c44384a16e85908fbb7/resources/images/freebase-attribution.png" style="float:left; margin: 15px" />
+	
+	 <div style="margin-left:30px;"> Source: <a href="http://www.freebase.com" title="Freebase &ndash; The World's Database">Freebase</a> &ndash; The World&apos;s Database <br/> Freely licensed under <a href="http://www.freebase.com/view/common/license/cc_attribution_25">CC-BY</a>. </div> 
 
-</div>
 
-<div id="aboutapp" class="apptext"><a href="{{ CODE_URL }}">Download the Source Code</a> &nbsp;|&nbsp; There's No Place Like <a href="{{ PERSONAL_URL }}">Homepage</a>
+<div id="aboutapp" class="apptext"><a href="http://github.com/jamslevy/baseinacase/tree">Download the Source Code</a> &nbsp;|&nbsp; There's No Place Like <a href="http://www.jamtoday.org">Homepage</a>
 </div>
 </div>
 

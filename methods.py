@@ -6,8 +6,9 @@ from google.appengine.ext import db
 from models import TopicEntity
 from models import UserEntity
 
+#change this to the name of your Freebase base
+BASE_NAME = "baseinacase"
 
-BASE_NAME = "yupgrade"
 
 
 class NewUser():
@@ -95,8 +96,7 @@ class NewTopicForUser():
 
 
 def freebase_session():
-  USERNAME = 'jamslevy'
-  PASSWORD = 'buttbutt'
+  from private_settings import FB_USERNAME, FB_PASSWORD
   from utils.utils import Debug
   from freebase import HTTPMetawebSession
   if Debug():
@@ -104,6 +104,6 @@ def freebase_session():
     session = HTTPMetawebSession('sandbox.freebase.com')    
   else:
     session = HTTPMetawebSession('freebase.com')
-  session.login(USERNAME, PASSWORD)
+  session.login(FB_USERNAME, FB_PASSWORD)
   return session    
    

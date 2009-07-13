@@ -1,8 +1,10 @@
-ScooppStream
+Base-In-A-Case
 ================
 
 
-ScoopStream is a GPLv3 licensed application that uses the Sunlight Labs API to disambiguate search terms into images of United States Congress representatives.
+Base-In-A-Case is an application demonstrating how a Google App Engine app can synchronize per-user lists of topics with a Base in Freebase.
+
+This simple feature makes it far easier to do further integration with Freebase and make it simple for developers and end-users to access your data via Freebase. 
 
 For development updates, visit http://www.jamtoday.org.
 
@@ -11,7 +13,7 @@ For development updates, visit http://www.jamtoday.org.
 
 Setup
 ------------
-ScooppStream requires the Google App Engine SDK. To deploy it, you must register an application at http://appengine.google.com
+Base-In-A-Case requires the Google App Engine SDK. To deploy it, you must register an application at http://appengine.google.com
 
 See 'setup' for details about configuring dev_appserver.py.
 

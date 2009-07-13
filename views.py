@@ -12,7 +12,7 @@ class Base(webapp.RequestHandler):
 
 	def get(self):	
 		template_values = {}
-		self.response.out.write(template.render('templates/base.html', template_values))
+		self.response.out.write(template.render('templates/intro.html', template_values))
 
 
 class User(webapp.RequestHandler):

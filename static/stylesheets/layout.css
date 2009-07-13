@@ -24,9 +24,6 @@ font-weight: bold;
 text-decoration: none;
 }
 
-a:hover {
-color: #005B8B;
-}
 
 blockquote, ol, p, ul {
 margin: 0 0 0.1em;
@@ -46,13 +43,13 @@ padding: 0 2em 0 1em;
 }
 
 h1, h2, h3, h4, h5, h6 {
-color: #FFFFFF;
+color: #333;
 margin: 0 0 0;
 padding: 0;
 }
 
 h1 {
-font-size: 35px;
+font-size: 50px;
 line-height: 1.2;
 margin:0pt 0pt 0.5em 30px;
 }
@@ -108,7 +105,7 @@ font-size: 1.4em;
 
 
 #content {
-/* margin: 1.5em auto 0; */
+margin: 30px;
 text-align: left;
 width: 50em;
 }
@@ -302,9 +299,7 @@ width: 100%;
 text-align: left;
 }
 #content {
-float: left;
 width: 50em;
-margin: 0;
 padding: 0;
 text-align: center;
 }

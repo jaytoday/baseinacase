@@ -99,10 +99,10 @@ margin: 0px 0px 270px 100px;
 
 .namepanel {
 
-border-right:2px dotted #EEEEEE;
-float:left;
-margin:-10pt 0 0 -100px;
+margin:-10pt 0 0 0;
 padding:0 55px 0 0;
+position:absolute;
+width:600px;
 
 }
 
@@ -127,15 +127,13 @@ width:600px;
 
 
 #aboutapp{
-margin:15px 0px;
+margin:7px 0px;
 position:absolute;
 text-align:center;
 }
 
 h1 {
-
 padding: 0px;
-text-align: left;
 }
 
 
@@ -239,7 +237,7 @@ margin:0pt 0px 0pt 290px;
 position: absolute;
 font-size: x-small;
 text-align: left;
-height:75px;
+height:45px;
 width:320px;
 position:absolute;
 margin-left: 230px;
