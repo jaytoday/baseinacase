@@ -18,8 +18,9 @@ class Base(webapp.RequestHandler):
 class User(webapp.RequestHandler):
 
   def get(self):
+    from methods import BASE_NAME
     user = self.get_user()
-    template_values = {'user': user, "debug":Debug()}
+    template_values = {'user': user, "debug":Debug(), "base_name": BASE_NAME}
     self.response.out.write(template.render('templates/user.html', template_values))
 
 # AND RESET CACHE USING TOUCH SERVICE

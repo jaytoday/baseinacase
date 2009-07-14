@@ -15,7 +15,7 @@ $(function(){
 
 {% block main %}
 
-<div class="appspanel">
+<div class="appspanel" style="height:140px;">
 
 
 
@@ -26,10 +26,13 @@ $(function(){
 <h1><a>Base-In-a-Case</a></h1>  
 
 <h3>Because it should be easier to sync Google App Engine and Freebase.</h3>
-
-
+<br/><div>This demo app stores a table of users and a list of topics for each user, and syncs these values with a Freebase Base. This allows users and developers to view and edit the app's data through Freebase.
 </div>
-<div id="search_control" style="position:absolute;margin:140px 170px;">
+<div  style="margin-top:15px;">
+	The front-end uses Freebase Suggest javascript library to add topics to and retrieve topics 
+	from Freebase.
+	</div>
+<div id="search_control" style="position:absolute;margin:25px 170px; padding:10px; background:#DDD; -moz-radius-border:3px; -moz-border-radius: 15px; -webkit-border-radius: 15px;">
 	<div id="prompt">Search any user name below....</div>
 <input value="jamtoday" id="name_search"><input id="name_search_submit" type="submit" value="Continue">
 </div>

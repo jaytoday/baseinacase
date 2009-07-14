@@ -12,6 +12,14 @@
 	{% include "scripts/freebase-suggest/jquery.suggest.js" %} 
 $(function(){
 
+{% if debug %}
+service_url = "http://sandbox.freebase.com";
+{% else %}
+service_url ="http://www.freebase.com";
+{% endif %}
+		
+options = { service_url: service_url };
+
 // add topic
 $('input#search').suggest()
 .bind("fb-select", function(e, data) {
@@ -40,24 +48,20 @@ $('input#search').suggest()
 });
 
 user_options = {
-	{% if debug %}
-	service_url: "http://sandbox.freebase.com",
-	{% else %}
-	service_url: "http://www.freebase.com",
-	{% endif %}
+	service_url: service_url,
 	soft: "false",
-mql_filter: 
+    mql_filter: 
 [{
 	{# WHY IS THIS SOOO SLOW #}
-  "!pd:/base/yupgrade/user/topics": [{
+  "id": null,
+  "!pd:/base/{{ base_name }}/user/topics": [{
     "id": "{{ user.id }}",
-    "type": "/base/yupgrade/user"
+    "type": "/base/{{ base_name }}/user"
   }]
 }]
 
-}
+};
 
-console.log('sending query to freebase: ', user_options.mql_filter)
 // search user domain
 // locally, use sandbox (this can be cached)
 $('input#user_search').suggest(user_options);
@@ -68,7 +72,7 @@ $('input#user_search').suggest(user_options);
 
 
 {% block main %}
-
+<div>
 <br/>
 add topic for {{ user.name }}: <input id="search">
 <br/><br/>
